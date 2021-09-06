@@ -1,0 +1,63 @@
+@model List<Todo>
+
+<div class="text-center">
+    <h1 class="display-4">Todo</h1>
+</div>
+
+<div class="todo-list">
+   @foreach (Todo todo in Model)
+   {
+      <div class="item" id="item-@todo.Id" data-title="@todo.Title" data-id="@todo.Id">
+         <div class="icon status">
+            @if (todo.Status == "Done")
+            {
+               <i class="far fa-check-square done"></i>
+            } else if (todo.Status == "OnGoing")
+            {
+               <i class="far fa-circle on-going"></i>
+            } else 
+            {
+               <i class="far fa-square"></i>
+            } 
+         </div>
+
+         <div class="title">
+            <a asp-controller="Todo" asp-action="Update" asp-route-id="@todo.Id">
+               @todo.Title 
+            </a>
+         </div>
+
+         <div class="icons">
+            <div class="icon edit">
+               <a asp-controller="Todo" asp-action="Update" asp-route-id="@todo.Id">
+                  <i class="fas fa-pencil-alt"></i>
+               </a>
+            </div>
+
+            <div class="icon trash">
+               <i id="trash-@todo.Id" class="fas fa-trash-alt"></i>
+            </div>
+         </div>
+      </div>
+   }
+</div>
+
+
+<template id="template-popup-delete">
+   <div class="popup fade-in">
+      <div class="popup__window fade-in-up">
+         <div id="popup-close" class="popup__window--action-bar">
+            close
+         </div>
+         <div class="popup__window--content">
+            <h3>Delete this item?</h3>
+            <p id="delete-item">Some item</p>
+
+            <form asp-controller="Todo" asp-action="Delete"  method="post">
+               <input type="hidden" name="id" id="delete-item-input" />
+               <input type="submit" value="Delete" class="button-warning" />
+            </form>
+         </div>
+      </div>
+   </div>
+</template>

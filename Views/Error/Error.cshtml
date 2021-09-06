@@ -1,0 +1,21 @@
+@model TodoApp.Models.HttpErrors.IHttpErrorViewModel;
+
+@{
+    ViewData["title"] = "Error " + Model.StatusCode;
+    int statusCode = Model.StatusCode;
+}
+
+<div class="container">
+    <div class="row">
+        @switch (statusCode)
+        {
+            case 404:
+                <p>@Model.Message</p>
+                break;
+            default:
+                <p>An unknown error occured while processing your request. Please try again later...</p>
+                break;
+        }
+
+    </div>
+</div>

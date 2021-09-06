@@ -1,0 +1,342 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+/* Global Todo Style 
+-------------------------------------------------- */
+:root {
+  --color-gray-xlight: #DFDFDF;
+  --color-gray-light: #a6b1bb;
+  --color-gray-dark: var(--gray-dark);
+  --color-red-dark: #bf2b39;
+  --color-orange: #fda300;
+  --color-green-dark: #259e58;
+  --color-blue-light: #61aae4;
+  --color-transparent: #00000054;
+
+  --border-radius-xs: 5px;
+  --border-radius-md: 20px;
+  --border-thick: 1px solid var(--color-gray-light);
+  --border-light: 1px solid var(--color-gray-xlight);
+  --border-blue-light: 2px solid var(--color-blue-light); 
+
+  --box-shadow-md: 0px 3px 7px 0px #00000036;
+
+  --spacer-sm: 0.5rem;
+  --spacer: 1rem;
+  --spacer-lg: 1.5rem;
+
+  --font-size-md: 1rem;
+  --font-size-lg: 1.5rem;
+  --font-weight-bold: 500;
+  --font-family-secondary: roboto;
+  --font-color-default: var(--color-gray-dark);
+}
+
+@keyframes fade-in {
+  0% { 
+    opacity: 0;
+   }
+ 
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  0% { 
+    opacity: 0;
+    margin-top: 30px;
+   }
+
+  50% { 
+    opacity: 0;
+    margin-top: 30px;
+   }
+ 
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% { 
+    opacity: 1;
+   }
+ 
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out-up {
+  0% { 
+    opacity: 1;
+    margin-bottom: 0;
+   }
+
+  50% { 
+    opacity: 1;
+    margin-bottom: 0;
+   }
+ 
+  100% {
+    opacity: 0;
+    margin-bottom: 30px;
+  }
+}
+/* Generic style*/
+
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.fade-in-up {
+  animation-name: fade-in-up;
+  animation-duration: 0.5s;
+}
+
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.fade-out-up {
+  animation-name: fade-out-up;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+label {
+  font-weight: var(--font-weight-bold);
+  display: block;
+  color: var(--font-color-default);
+}
+textarea,
+input {
+  border: var(--border-thick);
+  border-radius: var(--border-radius-xs);
+  margin-bottom: var(--spacer);
+  width: 100%;
+  padding: var(--spacer-sm);
+}
+
+textarea:focus,
+input:focus {
+  box-shadow: var(--box-shadow-md);
+  border: var(--border-blue-light);
+}
+
+.button {
+  border: none;
+  background-color: var(--color-green-dark);
+  border-radius: var(--border-radius-xs);
+  color: white;
+  font-weight: var(--font-weight-bold);
+  width: 100%;
+  padding: var(--spacer-sm);
+  transition: transform 0.3s ease;
+}
+.button:hover {
+  transform:scale(101%, 103%);
+}
+.button-warning {
+  border: none;
+  background-color: var(--color-red-dark);
+  border-radius: var(--border-radius-xs);
+  color: white;
+  font-weight: var(--font-weight-bold);
+  width: 100%;
+  padding: var(--spacer-sm);
+}
+/* End of Generic style*/
+
+/* Todo-Card style */
+.todo-card {
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-md);
+}
+.todo-card__title {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--font-color-default);
+  border-bottom: var(--border-thick); 
+  padding-bottom: var(--spacer-sm);
+}
+.todo-card__title h2{
+  font-weight: 300;
+}
+.todo-card p {
+  padding: var(--spacer-sm) 0;
+  font-style: italic;
+}
+/* End of Todo-Card style */
+
+/* Todo-list style */
+.todo-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.todo-list .item {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: var(--spacer) 0;
+  border-bottom: var(--border-light);
+}
+
+.todo-list .item .icons {
+  display: flex;
+}
+
+.todo-list .item .icons i {
+  cursor: pointer;
+}
+
+.todo-list .item .icons .trash {
+  margin-left: var(--spacer);
+}
+.todo-list .item .icons .trash i {
+  color: var(--color-red-dark);
+}
+
+.todo-list .item .icon {
+  padding: var(--spacer-sm); 
+}
+
+.todo-list .item .icon.status {
+  display: flex;
+  align-items: center;
+}
+
+.todo-list .item .icon.status .on-going {
+  color: var(--color-orange);
+}
+.todo-list .item .icon.status .done {
+  color: var(--color-green-dark);
+}
+
+.todo-list .item .icon i {
+  font-size: var(--font-size-lg);
+  color: var(--font-color-default);
+}
+
+.todo-list .item .title {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  margin-left: var(--spacer-sm);
+}
+.todo-list .item .title a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center; 
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-dark);
+}
+/* End of Todo-list style */
+
+/* Popup style */
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  background-color: var(--color-transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.popup__window {
+  background-color: white;
+  max-width: 600px;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacer-lg);
+}
+
+.popup__window--action-bar {
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+  margin-bottom: var(--spacer-sm);
+}
+/* End of Popup style */
+/* End of Global Todo Style 
+-------------------------------------------------- */
