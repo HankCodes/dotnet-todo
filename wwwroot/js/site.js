@@ -25,5 +25,5 @@ todoList && todoList.addEventListener('click', (e) => {
         setTimeout(() => popup.remove(), 1000)
     })
 
-    document.body.appendChild(popup);
+    document.body.appendChild(popup)
 })
