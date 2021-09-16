@@ -35,4 +35,4 @@ The application to be built will be a simle To-Do application.
 ### Stage 2
 [X] Improve styling of new item form  
 [X] Improve styling on edit item form  
-[X] Improve styling on listing items  
+[X] Improve styling on listing items   
