@@ -323,7 +323,6 @@ input:not([type="radio"]):focus {
   top: 0;
   left: 0;
 }
-
 .popup__window {
   background-color: white;
   max-width: 600px;
