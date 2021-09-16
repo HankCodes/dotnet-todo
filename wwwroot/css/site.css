@@ -330,7 +330,6 @@ input:not([type="radio"]):focus {
   border-radius: var(--border-radius-md);
   padding: var(--spacer-lg);
 }
-
 .popup__window--action-bar {
   display: flex;
   justify-content: end;
