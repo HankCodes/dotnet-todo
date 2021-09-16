@@ -20,20 +20,19 @@ The application to be built will be a simle To-Do application.
 
 ## TODO -list
 ### Stage 1
-[x] Clean up the templates
-[x] Add routes views and controllers for create, edit and list all todos pages
-[x] Add basic markup for frontpage
-[x] Add basic markup for creating list item
-[X] Add basic markup for editing a list item
-[x] Add basic markup for listing all todos
-[x] Create a SQL database 
-[x] Create tables for the database (Use Entity framework)
-[x] Make create functionality 
-[X] Make update functionality 
-[] Make delete functionality 
+[x] Clean up the templates  
+[x] Add routes views and controllers for create, edit and list all todos pages  
+[x] Add basic markup for frontpage  
+[x] Add basic markup for creating list item  
+[X] Add basic markup for editing a list item  
+[x] Add basic markup for listing all todos  
+[x] Set up Entity Framework    
+[x] Make create functionality  
+[X] Make update functionality   
+[X] Make delete functionality  
 [] List 3 most recent, 3 on goning and 3 done on frontpage
 
 ### Stage 2
-[] Improve styling of new item form
-[] Improve styling on edit item form
-[] Improve styling on listing items
+[X] Improve styling of new item form  
+[X] Improve styling on edit item form  
+[X] Improve styling on listing items  
