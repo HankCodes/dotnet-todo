@@ -1,24 +1,28 @@
 @model TodoApp.Models.Todo;
+<div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="text-center">
+            <h1 class="display-4">Create A Todo item</h1>
+        </div>
 
-<div>
-    <h1>Create A Todo item</h1>
-</div>
+        @using(Html.BeginForm())
+        {
+            <div>
+                <div>
+                    @Html.LabelFor(x => x.Title)
+                    @Html.TextBoxFor(x => x.Title)
+                    @Html.ValidationMessageFor(x => x.Title)
+                </div>
+                <div>
+                    @Html.LabelFor(x => x.Description)
+                    @Html.TextAreaFor(x => x.Description)
+                    @Html.ValidationMessageFor(x => x.Description)
+                </div>
+                <div>
+                    <input type="submit" value="Create" class="button"/>
+                </div>
+            </div>
+        }
 
-@using(Html.BeginForm())
-{
-    <div>
-        <div>
-            @Html.LabelFor(x => x.Title)
-            @Html.TextBoxFor(x => x.Title)
-            @Html.ValidationMessageFor(x => x.Title)
-        </div>
-        <div>
-            @Html.LabelFor(x => x.Description)
-            @Html.TextAreaFor(x => x.Description)
-            @Html.ValidationMessageFor(x => x.Description)
-        </div>
-        <div>
-            <input type="submit" value="Create" class="button"/>
-        </div>
     </div>
-}
+</div>

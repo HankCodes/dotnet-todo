@@ -195,7 +195,7 @@ input {
 }
 
 textarea:focus,
-input:focus {
+input:not([type="radio"]):focus {
   box-shadow: var(--box-shadow-md);
   border: var(--border-blue-light);
 }
@@ -338,5 +338,29 @@ input:focus {
   margin-bottom: var(--spacer-sm);
 }
 /* End of Popup style */
+
+
+/* Edit form style */
+.edit__status--container {
+  max-width: 400px;
+  margin-bottom: var(--spacer);
+}
+.edit__status--item {
+  display: flex;
+}
+.edit__status--item label {
+  width: 100%;
+}
+.edit__status--item input[type="radio"] {
+  margin-bottom: 0;
+}
+.edit__submit-button input {
+  transition: all 0.3s ease;
+}
+.edit__submit-button input:hover {
+  background-color: var(--color-green-dark);
+  color: white;
+}
+/* End of Edit form style */
 /* End of Global Todo Style 
 -------------------------------------------------- */
