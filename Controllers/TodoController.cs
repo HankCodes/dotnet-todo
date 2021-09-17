@@ -3,9 +3,7 @@ using System.Diagnostics;
 using TodoApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using TodoApp.Data;
 using System.Threading.Tasks;
-using TodoApp.Models.Enums;
 using TodoApp.Models.services;
 using System.Collections.Generic;
 using TodoApp.Models.HttpErrors;
@@ -22,6 +20,7 @@ namespace TodoApp.Controllers
             _logger = logger;
             _service = service;
         }
+
         public async Task<IActionResult> Index()
         {
             try
