@@ -4,12 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TodoApp.Data;
+using TodoApp.Models.Enums;
 
 namespace TodoApp.Models.services
 {
     public class TodoService
     {
-        private TodoAppContext _context;
+        protected TodoAppContext _context;
 
         public TodoService(TodoAppContext context)
         {
@@ -26,6 +27,22 @@ namespace TodoApp.Models.services
         public async Task<Todo> GetById(int id)
         {
             return await _context.Todo.FindAsync(id);
+        }
+
+        public async Task<List<Todo>> GetMostRecent(int limit)
+        {
+            return await _context.Todo
+                            .OrderByDescending(t => t.Id)
+                            .Take(limit).ToListAsync();
+        }
+
+        public async Task<List<Todo>> GetMostRecentlyChangedByStatus(TodoStatus enumStatus, int limit)
+        {
+            string status = Enum.GetName(typeof(TodoStatus), enumStatus);
+            return await _context.Todo
+                            .Where(t => t.Status == status)
+                            .OrderByDescending(t => t.Id)
+                            .Take(limit).ToListAsync();
         }
 
         public async Task<int> Add(Todo todo)

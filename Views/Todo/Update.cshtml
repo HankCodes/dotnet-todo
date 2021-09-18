@@ -1,3 +1,4 @@
+@using TodoApp.Models.Enums
 @model Todo;
 
 <div class="row d-flex justify-content-center">
@@ -37,17 +38,17 @@
                         <h3>Status</h3>
                         <div class="edit__status--item">
                             <label for="to-be-done">To be done</label>
-                            <input type="radio" id="to-be-done" name="Status" value="ToBeDone" checked=@( Model.Status == "ToBeDone" ) />
+                            <input type="radio" id="to-be-done" name="Status" value="@TodoStatus.ToBeDone" checked=@( Model.Status == nameof(TodoStatus.ToBeDone) ) />
                         </div>
 
                         <div class="edit__status--item">
                             <label for="on-going">On going</label>
-                            <input type="radio" id="on-going" name="Status" value="OnGoing" checked=@( Model.Status == "OnGoing" )/>
+                            <input type="radio" id="on-going" name="Status" value="@TodoStatus.OnGoing" checked=@( Model.Status == nameof(TodoStatus.OnGoing) )/>
                         </div>
 
                         <div class="edit__status--item">
                             <label for="done">Done</label>
-                            <input type="radio" id="done" name="Status" value="Done" checked=@( Model.Status == "Done" )/>
+                            <input type="radio" id="done" name="Status" value="@TodoStatus.Done" checked=@( Model.Status == nameof(TodoStatus.Done) )/>
                         </div>
                     </div>
 
