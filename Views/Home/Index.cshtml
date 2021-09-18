@@ -14,8 +14,10 @@
             <div class="todo-card__title">
                 <h2>Most Recent</h2>
             </div> 
-                
-            <p>There are no new Todo's</p>
+               @foreach (Todo item in Model.MostRecent)
+               {
+                  <p>@item.Title</p> 
+               } 
         </div>
     </div>
     
@@ -24,8 +26,10 @@
             <div class="todo-card__title">
                 <h2>On Going</h2>
             </div> 
-
-            <p>There are no new Todo's</p>
+               @foreach (Todo item in Model.MostRecentOnGoing)
+               {
+                  <p>@item.Title</p> 
+               } 
         </div>
     </div>
 
@@ -34,8 +38,10 @@
             <div class="todo-card__title">
                 <h2>Recently Done</h2>
             </div> 
-
-            <p>There are no new Todo's</p>
+               @foreach (Todo item in Model.MostRecentDone)
+               {
+                  <p>@item.Title</p> 
+               } 
         </div>
     </div>
 </div>

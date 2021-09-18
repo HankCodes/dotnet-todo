@@ -25,14 +25,26 @@ namespace TodoApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            TodoIndexViewModel vm = new TodoIndexViewModel()
+            try
             {
-                MostRecent = await _service.GetMostRecent(3) ?? new List<Todo>(),
-                MostRecentOnGoing = await _service.GetMostRecentlyChangedByStatus(TodoStatus.OnGoing, 3) ?? new List<Todo>(),
-                MostRecentDone = await _service.GetMostRecentlyChangedByStatus(TodoStatus.Done, 3) ?? new List<Todo>()
-            };
+                TodoIndexViewModel vm = new TodoIndexViewModel()
+                {
+                    MostRecent = await _service.GetMostRecent(3) ?? new List<Todo>(),
+                    MostRecentOnGoing = await _service.GetMostRecentlyChangedByStatus(TodoStatus.OnGoing, 3) ?? new List<Todo>(),
+                    MostRecentDone = await _service.GetMostRecentlyChangedByStatus(TodoStatus.Done, 3) ?? new List<Todo>()
+                };
 
-            return View(vm);
+                return View(vm);
+            }
+            catch (Exception)
+            {
+                TodoIndexViewModel vm = new TodoIndexViewModel()
+                {
+                    ErrorMessage = "Could not get todo items at the moment. Please try again soon"
+                };
+
+                return View(vm);
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

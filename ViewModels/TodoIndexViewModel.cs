@@ -6,8 +6,36 @@ namespace TodoApp.ViewModel
 {
     public class TodoIndexViewModel
     {
-        public List<Todo> MostRecent { get; set; }
-        public List<Todo> MostRecentOnGoing { get; set; }
-        public List<Todo> MostRecentDone { get; set; }
+        protected List<Todo> _mostRecent;
+        protected List<Todo> _mostRecentOnGoing;
+        protected List<Todo> _mostRecentDone;
+        public List<Todo> MostRecent
+        {
+            get
+            {
+                return _mostRecent ?? new List<Todo>();
+            }
+
+            set => _mostRecent = value;
+        }
+        public List<Todo> MostRecentOnGoing
+        {
+            get
+            {
+                return _mostRecentOnGoing ?? new List<Todo>();
+            }
+
+            set => _mostRecentOnGoing = value;
+        }
+        public List<Todo> MostRecentDone
+        {
+            get
+            {
+                return _mostRecentDone ?? new List<Todo>();
+            }
+
+            set => _mostRecentDone = value;
+        }
+        public string ErrorMessage { get; set; }
     }
 }

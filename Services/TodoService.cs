@@ -36,10 +36,11 @@ namespace TodoApp.Models.services
                             .Take(limit).ToListAsync();
         }
 
-        public async Task<List<Todo>> GetMostRecentlyChangedByStatus(TodoStatus status, int limit)
+        public async Task<List<Todo>> GetMostRecentlyChangedByStatus(TodoStatus enumStatus, int limit)
         {
+            string status = Enum.GetName(typeof(TodoStatus), enumStatus);
             return await _context.Todo
-                            .Where(t => t.Status == nameof(status))
+                            .Where(t => t.Status == status)
                             .OrderByDescending(t => t.Id)
                             .Take(limit).ToListAsync();
         }
