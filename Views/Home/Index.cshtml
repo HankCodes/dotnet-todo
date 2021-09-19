@@ -14,10 +14,26 @@
             <div class="todo-card__title">
                 <h2>Most Recent</h2>
             </div> 
-               @foreach (Todo item in Model.MostRecent)
-               {
-                  <p>@item.Title</p> 
-               } 
+
+            <div class="todo-card__list">
+                <ul class="list-small">
+                    @if (Model.MostRecent.Count < 1)
+                    {
+                        <li class="list-small__empty">
+                            <p>Empty</p>
+                        </li>
+                    } 
+                    else 
+                    {
+                        @foreach (Todo item in Model.MostRecent)
+                        {
+                            <li  class="list-small__item">
+                                <a asp-controller="Todo" asp-action="Update" asp-route-id="@item.Id" >@item.Title</a>
+                            </li>
+                        } 
+                    }
+                </ul>
+            </div> 
         </div>
     </div>
     
@@ -26,10 +42,26 @@
             <div class="todo-card__title">
                 <h2>On Going</h2>
             </div> 
-               @foreach (Todo item in Model.MostRecentOnGoing)
-               {
-                  <p>@item.Title</p> 
-               } 
+
+            <div class="todo-card__list">
+                <ul class="list-small">
+                    @if (Model.MostRecentOnGoing.Count < 1)
+                    {
+                        <li class="list-small__empty">
+                            <p>Empty</p>
+                        </li>
+                    } 
+                    else 
+                    {
+                        @foreach (Todo item in Model.MostRecentOnGoing)
+                        {
+                            <li  class="list-small__item">
+                                <a asp-controller="Todo" asp-action="Update" asp-route-id="@item.Id" >@item.Title</a>
+                            </li>
+                        } 
+                    }
+                </ul>
+            </div> 
         </div>
     </div>
 
@@ -38,10 +70,26 @@
             <div class="todo-card__title">
                 <h2>Recently Done</h2>
             </div> 
-               @foreach (Todo item in Model.MostRecentDone)
-               {
-                  <p>@item.Title</p> 
-               } 
+
+            <div class="todo-card__list"> 
+                <ul class="list-small">
+                    @if (Model.MostRecentDone.Count < 1)
+                    {
+                        <li class="list-small__empty">
+                            <p>Empty</p>
+                        </li>
+                    } 
+                    else 
+                    {
+                        @foreach (Todo item in Model.MostRecentDone)
+                        {
+                            <li  class="list-small__item">
+                                <a asp-controller="Todo" asp-action="Update" asp-route-id="@item.Id" >@item.Title</a>
+                            </li>
+                        } 
+                    }
+                </ul>
+            </div> 
         </div>
     </div>
 </div>
