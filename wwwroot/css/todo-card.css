@@ -2,6 +2,7 @@
 .todo-card {
   border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow-md);
+  height: 100%;
 }
 .todo-card__title {
   text-align: center;
