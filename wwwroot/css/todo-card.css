@@ -1,0 +1,41 @@
+/* Todo-Card style */
+.todo-card {
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-md);
+  height: 100%;
+}
+.todo-card__title {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--font-color-default);
+  border-bottom: var(--border-thick); 
+  padding-bottom: var(--spacer-sm);
+  margin-bottom: var(--spacer-sm);
+}
+.todo-card__title h2{
+  font-weight: 300;
+}
+.todo-card__list {
+    padding-left: var(--spacer);
+}
+
+/* End of Todo-Card style */
+
+/* Todo-Card small list style */
+.list-small {
+    margin: 0;
+    padding: 0;
+}
+.list-small__item {
+    list-style: none;
+    padding: var(--spacer-xs) 0;
+}
+.list-small__item a {
+    color: var(--font-color-default);
+    font-size: var(--font-size-lg);
+}
+
+.list-small__empty p {
+  font-style: italic;
+}
+/* End of Todo-Card small list style */
